@@ -1,0 +1,39 @@
+Signup Endpoint:
+
+Endpoint: POST http://localhost:3000/signup
+Payload:
+json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "companyName": "Example Company",
+  "gstNumber": "GST123",
+  "password": "password123",
+  "confirmPassword": "password123"
+}
+Signin Endpoint:
+
+Endpoint: POST http://localhost:3000/signin
+Payload:
+json
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+Send Quotes Endpoint:
+
+Endpoint: POST http://localhost:3000/sendQuotes
+Payload:
+json
+{
+  "email": "john@example.com",
+  "quotes": ["quote1", "quote2", "quote3"]
+}
+Make sure your server is running (node app.js or nodemon app.js), and replace the http://localhost:3000 with your actual server URL if you're running it on a different host or port.
+
+Remember to set the appropriate headers, especially for the "Send Quotes" endpoint, where you might need to include the authentication token in the request headers. The token is obtained during the signin process. If your application uses JWT (JSON Web Token) for authentication, you might include it like this:
+
+Header:
+
+Key: Authorization
+Value: Bearer <your_jwt_token_here>
